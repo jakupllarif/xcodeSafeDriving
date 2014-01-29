@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
 @interface ViewController : UIViewController
 //login view
@@ -17,7 +16,6 @@
 - (IBAction)registerBtn:(id)sender;
 
 //register view
-@property (weak, nonatomic) IBOutlet UIView *registerLayout;
 @property (weak, nonatomic) IBOutlet UITextField *rfnameField;
 @property (weak, nonatomic) IBOutlet UITextField *rlnameField;
 @property (weak, nonatomic) IBOutlet UITextField *rphoneNumberField;
@@ -25,9 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *rpasswordField;
 @property (weak, nonatomic) IBOutlet UITextField *rrepasswordField;
 @property (weak, nonatomic) IBOutlet UITextField *remailField;
-@property (weak, nonatomic) IBOutlet UITextField *rgenderField;
-@property (weak, nonatomic) IBOutlet UITextField *rbloodGroupField;
-@property (weak, nonatomic) IBOutlet UITextField *rbirthdayField;
 - (IBAction)Register:(id)sender;
 
 @end
