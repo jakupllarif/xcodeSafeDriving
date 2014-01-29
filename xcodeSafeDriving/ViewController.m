@@ -26,6 +26,7 @@
     if (user.username != nil) {
         [self performSegueWithIdentifier:@"login" sender:self];
     }
+    self.passwordField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,14 +35,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 //dismiss keyboard when user touch anyother place outside textfield
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
 
 - (IBAction)loginBtn:(id)sender {
+    [_activityLayView startAnimating];
+    NSLog(@"Logging in");
     [PFUser logInWithUsernameInBackground:_usernameField.text password:_passwordField.text block:^(PFUser *user, NSError *error) {
         if (!error) {
+            [_activityLayView stopAnimating];
             NSLog(@"Login user!");
             [self performSegueWithIdentifier:@"login" sender:self];
         }
@@ -93,7 +102,7 @@
 }
 
 - (void) registerNewUser {
-    //[_activityLayView startAnimating];
+    [_activityLayView startAnimating];
     NSLog(@"registering...");
     PFUser *newUser = [PFUser user];
     newUser.username = _rusernameField.text;
@@ -108,7 +117,7 @@
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
-            //[_activityLayView stopAnimating];
+            [_activityLayView stopAnimating];
             NSLog(@"Registration success!");
             [self performSegueWithIdentifier:@"login" sender:self];
         }

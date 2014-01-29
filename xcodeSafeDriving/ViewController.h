@@ -29,4 +29,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *rbirthdayField;
 - (IBAction)Register:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLayView;
+
 @end
