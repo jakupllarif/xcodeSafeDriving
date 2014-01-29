@@ -7,12 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import <Parse/Parse.h>
 
 @implementation MainViewController
 
-- (IBAction)logout:(id)sender {
-    [PFUser logOut];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

@@ -1,13 +1,13 @@
 //
-//  MainViewController.h
+//  CurrentSpeedViewController.m
 //  xcodeSafeDriving
 //
 //  Created by Gabriel Liu on 1/29/14.
 //  Copyright (c) 2014 Jakupllari F. & Liu Z. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CurrentSpeedViewController.h"
 
-@interface MainViewController : UIViewController
+@implementation CurrentSpeedViewController
 
 @end

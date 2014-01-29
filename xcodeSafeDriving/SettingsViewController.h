@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  SettingsViewController.h
 //  xcodeSafeDriving
 //
 //  Created by Gabriel Liu on 1/29/14.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface SettingsViewController : UIViewController
+- (IBAction)logout:(id)sender;
 
 @end
