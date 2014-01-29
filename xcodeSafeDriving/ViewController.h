@@ -16,6 +16,7 @@
 - (IBAction)registerBtn:(id)sender;
 
 //register view
+@property (weak, nonatomic) IBOutlet UIView *registerLayout;
 @property (weak, nonatomic) IBOutlet UITextField *rfnameField;
 @property (weak, nonatomic) IBOutlet UITextField *rlnameField;
 @property (weak, nonatomic) IBOutlet UITextField *rphoneNumberField;
@@ -23,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *rpasswordField;
 @property (weak, nonatomic) IBOutlet UITextField *rrepasswordField;
 @property (weak, nonatomic) IBOutlet UITextField *remailField;
+@property (weak, nonatomic) IBOutlet UITextField *rgenderFirld;
+@property (weak, nonatomic) IBOutlet UITextField *rbloodGroupField;
+@property (weak, nonatomic) IBOutlet UITextField *rbirthdayField;
 - (IBAction)Register:(id)sender;
 
 @end

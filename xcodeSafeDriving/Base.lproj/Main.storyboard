@@ -124,7 +124,7 @@
                                         <rect key="frame" x="20" y="239" width="114" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="retype password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-dX-1Ae">
                                         <rect key="frame" x="173" y="367" width="127" height="30"/>
@@ -150,25 +150,29 @@
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="dUW-Mx-BeC" id="y7T-KW-fCc"/>
+                        <outlet property="rbirthdayField" destination="l1H-I0-xsg" id="cta-Gg-SRi"/>
+                        <outlet property="rbloodGroupField" destination="2Rq-ih-8eN" id="pPM-ur-2gf"/>
+                        <outlet property="registerLayout" destination="Z0t-Fw-yWQ" id="rLN-Yf-WbJ"/>
                         <outlet property="remailField" destination="9Yz-bN-2JC" id="VCY-Ts-vHM"/>
                         <outlet property="rfnameField" destination="uOg-C3-22Z" id="80D-ay-QS4"/>
+                        <outlet property="rgenderFirld" destination="3mC-EC-7F5" id="H9G-Xt-n5P"/>
                         <outlet property="rlnameField" destination="4Ip-hC-xSY" id="Py8-Ku-0LD"/>
                         <outlet property="rpasswordField" destination="r0I-UW-6ws" id="VYZ-aG-KWW"/>
                         <outlet property="rphoneNumberField" destination="XwJ-dG-91e" id="gi8-T2-W9S"/>
                         <outlet property="rrepasswordField" destination="lBi-dX-1Ae" id="4Ip-rx-Pst"/>
                         <outlet property="rusernameField" destination="j60-ub-UbB" id="TGl-Ys-Pfq"/>
                         <outlet property="usernameField" destination="aoE-t7-6yE" id="Tjj-rU-p7f"/>
-                        <segue destination="0L7-db-RWa" kind="modal" id="q3J-Mx-aCC"/>
+                        <segue destination="0L7-db-RWa" kind="modal" identifier="login" id="q3J-Mx-aCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-687" y="-80"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="rnU-rz-ePX">
             <objects>
-                <viewController id="weP-ud-uxS" sceneMemberID="viewController">
+                <viewController id="weP-ud-uxS" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KZ7-7j-ons"/>
                         <viewControllerLayoutGuide type="bottom" id="a49-oE-4Pc"/>
@@ -176,6 +180,25 @@
                     <view key="view" contentMode="scaleToFill" id="dwL-KM-Csx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-cH-p7N">
+                                <rect key="frame" x="121" y="273" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTS-Px-6uq">
+                                <rect key="frame" x="137" y="417" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="weP-ud-uxS" eventType="touchUpInside" id="CF5-PY-Dhy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mYP-6C-xDX"/>
