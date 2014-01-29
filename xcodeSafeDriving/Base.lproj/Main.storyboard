@@ -124,7 +124,7 @@
                                         <rect key="frame" x="20" y="239" width="114" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="retype password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-dX-1Ae">
                                         <rect key="frame" x="173" y="367" width="127" height="30"/>
@@ -150,15 +150,19 @@
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="dUW-Mx-BeC" id="y7T-KW-fCc"/>
+                        <outlet property="rbirthdayField" destination="l1H-I0-xsg" id="oiW-c5-XM1"/>
+                        <outlet property="rbloodGroupField" destination="2Rq-ih-8eN" id="haA-nR-6Nu"/>
+                        <outlet property="registerLayout" destination="Z0t-Fw-yWQ" id="oeD-2w-Etb"/>
                         <outlet property="remailField" destination="9Yz-bN-2JC" id="VCY-Ts-vHM"/>
                         <outlet property="rfnameField" destination="uOg-C3-22Z" id="80D-ay-QS4"/>
+                        <outlet property="rgenderField" destination="3mC-EC-7F5" id="taI-Fx-eoO"/>
                         <outlet property="rlnameField" destination="4Ip-hC-xSY" id="Py8-Ku-0LD"/>
                         <outlet property="rpasswordField" destination="r0I-UW-6ws" id="VYZ-aG-KWW"/>
                         <outlet property="rphoneNumberField" destination="XwJ-dG-91e" id="gi8-T2-W9S"/>
                         <outlet property="rrepasswordField" destination="lBi-dX-1Ae" id="4Ip-rx-Pst"/>
                         <outlet property="rusernameField" destination="j60-ub-UbB" id="TGl-Ys-Pfq"/>
                         <outlet property="usernameField" destination="aoE-t7-6yE" id="Tjj-rU-p7f"/>
-                        <segue destination="0L7-db-RWa" kind="modal" id="q3J-Mx-aCC"/>
+                        <segue destination="0L7-db-RWa" kind="modal" identifier="login" id="q3J-Mx-aCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -176,7 +180,7 @@
                     <view key="view" contentMode="scaleToFill" id="dwL-KM-Csx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.53935660549999997" green="0.60679273759999997" blue="0.67694887910000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="mYP-6C-xDX"/>
                 </viewController>
