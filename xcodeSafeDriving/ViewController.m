@@ -97,26 +97,39 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"You need to complete all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }else {
-        
         if (!match) {
-            UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:@"Ooooopss" message:@"Please enter a valid phone number" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
-            [alert1 show];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss" message:@"Please enter a valid phone number" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+            [alert show];
         } else {
             [self checkPasswordsMatch];
         }
+        
         
         //[self checkPasswordsMatch];
     }
 }
 
 - (void) checkPasswordsMatch {
-    if (![_rpasswordField.text isEqualToString:_rrepasswordField.text]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"Passwords don't match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    if (_rpasswordField.text.length >= 6 && _rpasswordField.text.length <= 14) {
+        if (![_rpasswordField.text isEqualToString:_rrepasswordField.text]) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"Passwords don't match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else {
+            [self registerNewUser];
+        }
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss" message:@"The password has to be between 8 to 15" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
         [alert show];
     }
-    else {
-        [self registerNewUser];
-    }
+    
+//    if (![_rpasswordField.text isEqualToString:_rrepasswordField.text]) {
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"Passwords don't match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [alert show];
+//    }
+//    else {
+//        [self registerNewUser];
+//    }
 }
 
 - (void) registerNewUser {
