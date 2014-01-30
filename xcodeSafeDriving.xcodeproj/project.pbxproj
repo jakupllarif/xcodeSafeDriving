@@ -16,7 +16,6 @@
 		122EBB18189985C600C5483C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0F189985C600C5483C /* Security.framework */; };
 		122EBB19189985C600C5483C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB10189985C600C5483C /* StoreKit.framework */; };
 		122EBB1A189985C600C5483C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB11189985C600C5483C /* SystemConfiguration.framework */; };
-		122EBB1C189985DC00C5483C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB1B189985DC00C5483C /* Parse.framework */; };
 		122EBB2B1899A0C600C5483C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB2A1899A0C600C5483C /* MainViewController.m */; };
 		122EBB2E1899A0DA00C5483C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB2D1899A0DA00C5483C /* SettingsViewController.m */; };
 		122EBB311899A0EF00C5483C /* CurrentSpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB301899A0EF00C5483C /* CurrentSpeedViewController.m */; };
@@ -35,6 +34,7 @@
 		E3A1375618997CB600AFF302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373818997CB600AFF302 /* UIKit.framework */; };
 		E3A1375E18997CB600AFF302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3A1375C18997CB600AFF302 /* InfoPlist.strings */; };
 		E3A1376018997CB600AFF302 /* xcodeSafeDrivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A1375F18997CB600AFF302 /* xcodeSafeDrivingTests.m */; };
+		E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB1B189985DC00C5483C /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122EBB1C189985DC00C5483C /* Parse.framework in Frameworks */,
+				E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */,
 				122EBB12189985C600C5483C /* AudioToolbox.framework in Frameworks */,
 				122EBB13189985C600C5483C /* CFNetwork.framework in Frameworks */,
 				122EBB14189985C600C5483C /* CoreLocation.framework in Frameworks */,
@@ -450,6 +450,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/gabrielliu/Documents/STUDY/GradSchool/Fin_Project/xcodeSafeDriving,
+					/Users/Ajakupllari/Desktop/iOSApps/xcodeSafeDriving,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xcodeSafeDriving/xcodeSafeDriving-Prefix.pch";
@@ -470,6 +471,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/gabrielliu/Documents/STUDY/GradSchool/Fin_Project/xcodeSafeDriving,
+					/Users/Ajakupllari/Desktop/iOSApps/xcodeSafeDriving,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xcodeSafeDriving/xcodeSafeDriving-Prefix.pch";
