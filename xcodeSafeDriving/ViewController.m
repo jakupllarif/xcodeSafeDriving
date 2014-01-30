@@ -110,7 +110,7 @@
 }
 
 - (void) checkPasswordsMatch {
-    if (_rpasswordField.text.length >= 6 && _rpasswordField.text.length <= 14) {
+    if ([_rpasswordField.text length] >= 6 && [_rpasswordField.text length] <= 14) {
         if (![_rpasswordField.text isEqualToString:_rrepasswordField.text]) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"Passwords don't match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
