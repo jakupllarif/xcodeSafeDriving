@@ -91,19 +91,21 @@
      NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!#$%&@?]).*$" options:0 error:NULL];//Password must contain 8 characters and at least one number, one letter and one unique character such as !#$%&@?
     NSTextCheckingResult *match = [regex firstMatchInString:_rpasswordField.text options:0 range:NSMakeRange(0, [_rpasswordField.text length])];
      */
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^\\d{10,15}$" options:0 error:NULL];
+    NSTextCheckingResult *match = [regex firstMatchInString:_rphoneNumberField.text options:0 range:NSMakeRange(0, [_rphoneNumberField.text length])];
     if ([_rfnameField.text isEqualToString:@""] || [_rlnameField.text isEqualToString:@""] || [_rphoneNumberField.text isEqualToString:@""] || [_rusernameField.text isEqualToString:@""] || [_rpasswordField.text isEqualToString:@""] || [_rrepasswordField.text isEqualToString:@""] || [_remailField.text isEqualToString:@""] || [_rgenderFirld.text isEqualToString:@""] || [_rbloodGroupField.text isEqualToString:@""] || [_rbirthdayField.text isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"You need to complete all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }else {
-        /*
+        
         if (!match) {
-            UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:@"Ooooopss" message:@"Password must contain 8 characters and at least one number, one letter and one unique character such as !#$?%&" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+            UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:@"Ooooopss" message:@"Please enter a valid phone number" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
             [alert1 show];
         } else {
             [self checkPasswordsMatch];
         }
-         */
-        [self checkPasswordsMatch];
+        
+        //[self checkPasswordsMatch];
     }
 }
 
