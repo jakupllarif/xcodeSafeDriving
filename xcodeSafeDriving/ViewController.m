@@ -51,11 +51,14 @@
     [PFUser logInWithUsernameInBackground:_usernameField.text password:_passwordField.text block:^(PFUser *user, NSError *error) {
         if (!error) {
             [_activityLayView stopAnimating];
+            _usernameField.text = @"";
+            _passwordField.text = @"";
             NSLog(@"Login user!");
             [self performSegueWithIdentifier:@"login" sender:self];
         }
         if (error) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooopss!" message:@"Sorry we had a problem logging you in" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [_activityLayView stopAnimating];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooopss!" message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }];
@@ -83,10 +86,23 @@
 }
 
 - (void) checkFieldComplete {
+    //regular expression validation (already move to cloud code)
+    /*
+     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!#$%&@?]).*$" options:0 error:NULL];//Password must contain 8 characters and at least one number, one letter and one unique character such as !#$%&@?
+    NSTextCheckingResult *match = [regex firstMatchInString:_rpasswordField.text options:0 range:NSMakeRange(0, [_rpasswordField.text length])];
+     */
     if ([_rfnameField.text isEqualToString:@""] || [_rlnameField.text isEqualToString:@""] || [_rphoneNumberField.text isEqualToString:@""] || [_rusernameField.text isEqualToString:@""] || [_rpasswordField.text isEqualToString:@""] || [_rrepasswordField.text isEqualToString:@""] || [_remailField.text isEqualToString:@""] || [_rgenderFirld.text isEqualToString:@""] || [_rbloodGroupField.text isEqualToString:@""] || [_rbirthdayField.text isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ooooopss!" message:@"You need to complete all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }else {
+        /*
+        if (!match) {
+            UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:@"Ooooopss" message:@"Password must contain 8 characters and at least one number, one letter and one unique character such as !#$?%&" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+            [alert1 show];
+        } else {
+            [self checkPasswordsMatch];
+        }
+         */
         [self checkPasswordsMatch];
     }
 }
@@ -118,10 +134,23 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
             [_activityLayView stopAnimating];
+            _rfnameField.text = @"";
+            _rlnameField.text = @"";
+            _rphoneNumberField.text = @"";
+            _rusernameField.text = @"";
+            _rpasswordField.text = @"";
+            _rrepasswordField.text = @"";
+            _remailField.text = @"";
+            _rgenderFirld.text = @"";
+            _rbloodGroupField.text = @"";
+            _rbirthdayField.text = @"";
             NSLog(@"Registration success!");
             [self performSegueWithIdentifier:@"login" sender:self];
         }
         else {
+            [_activityLayView stopAnimating];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:[error userInfo][@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
             NSLog(@"There was an error in registration");
         }
     }];
