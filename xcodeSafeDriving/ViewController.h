@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 - (IBAction)loginBtn:(id)sender;
 - (IBAction)registerBtn:(id)sender;
+- (IBAction)resetPasswordBtn:(id)sender;
+
 
 //register view
 @property (weak, nonatomic) IBOutlet UIView *registerLayout;

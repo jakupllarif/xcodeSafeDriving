@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xcodeSafeDriving/ViewController.m"
-            timestampString = "412807390.67563"
+            timestampString = "412979874.446792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-registerNewUser"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xcodeSafeDriving/ViewController.m"
-            timestampString = "412741365.207463"
+            timestampString = "412978625.428783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xcodeSafeDriving/ViewController.m"
-            timestampString = "412806050.934866"
+            timestampString = "412979874.446792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-validateUserData"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xcodeSafeDriving/MainViewController.m"
-            timestampString = "412824984.97374"
+            timestampString = "412977269.131172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-viewDidAppear:"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xcodeSafeDriving/MainViewController.m"
-            timestampString = "412823936.959237"
+            timestampString = "412977645.182118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-viewDidAppear:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xcodeSafeDriving/MainViewController.m"
-            timestampString = "412823940.77384"
+            timestampString = "412977645.182118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "-viewDidAppear:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

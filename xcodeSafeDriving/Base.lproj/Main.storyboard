@@ -54,7 +54,15 @@
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetPasswordBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sGu-Kl-IaK"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="y5f-au-aTN">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0t-Fw-yWQ">
                                 <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,10 +153,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="y5f-au-aTN">
-                                <rect key="frame" x="142" y="265" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.53935660549999997" green="0.60679273759999997" blue="0.67694887910000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -193,11 +197,47 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xtR-nz-UiJ">
+                                <rect key="frame" x="0.0" y="142" width="320" height="291"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="g5V-dB-6Fu" detailTextLabel="dOn-gm-BFR" rowHeight="67" style="IBUITableViewCellStyleValue1" id="bg2-JM-8CK">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bg2-JM-8CK" id="avq-b8-acc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g5V-dB-6Fu">
+                                                    <rect key="frame" x="15" y="23" width="33" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOn-gm-BFR">
+                                                    <rect key="frame" x="261" y="23" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7dK-x8-dgH" id="AtK-Z6-VnX"/>
+                                    <outlet property="delegate" destination="7dK-x8-dgH" id="Im2-kZ-0a4"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="HNL-7t-zeo"/>
                     <connections>
+                        <outlet property="functionalitiesTableView" destination="xtR-nz-UiJ" id="3D3-oF-Vzi"/>
                         <outlet property="welcomeMessage" destination="wbW-e8-kas" id="4Fs-dG-N9O"/>
                     </connections>
                 </viewController>

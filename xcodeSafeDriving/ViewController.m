@@ -23,9 +23,9 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     PFUser *user = [PFUser currentUser];
-    if (user.username != nil) {
+    [user refresh];
+    if (user.username != nil)
         [self performSegueWithIdentifier:@"login" sender:self];
-    }
     self.passwordField.delegate = self;
 }
 
@@ -69,6 +69,9 @@
     [UIView animateWithDuration:0.3 animations:^{
         _registerLayout.frame = self.view.frame;
     }];
+}
+
+- (IBAction)resetPasswordBtn:(id)sender {
 }
 
 - (IBAction)Register:(id)sender {
