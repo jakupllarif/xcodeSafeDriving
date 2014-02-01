@@ -146,6 +146,10 @@
     [newUser setObject:_rgenderFirld.text forKey:@"gender"];
     [newUser setObject:_rbloodGroupField.text forKey:@"bloodGroup"];
     [newUser setObject:_rbirthdayField.text forKey:@"birthday"];
+    newUser[@"smsBlock"] = @YES;
+    newUser[@"emergencyNotification"] = @YES;
+    newUser[@"speedTrack"] = @YES;
+    newUser[@"drunkDriving"] = @YES;
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(!error) {
