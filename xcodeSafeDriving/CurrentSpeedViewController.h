@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CurrentSpeedViewController : UIViewController
+@interface CurrentSpeedViewController : UIViewController <CLLocationManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end
