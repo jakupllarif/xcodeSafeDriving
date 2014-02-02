@@ -28,6 +28,10 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [locationManager startUpdatingLocation];
+}
+
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -59,4 +63,7 @@
     } ];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [locationManager stopUpdatingLocation];
+}
 @end
