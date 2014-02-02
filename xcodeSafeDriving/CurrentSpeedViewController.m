@@ -43,7 +43,7 @@
     CLLocation *currentLocation = newLocation;
     
     if (currentLocation != nil) {
-        _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", currentLocation.speed];
+        _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", currentLocation.speed <= 0.00 ? 0 : currentLocation.speed];
     }
     
     // Reverse Geocoding
