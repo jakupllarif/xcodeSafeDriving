@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
     _functionalitiesTableView.delegate = self;
     _functionalitiesTableView.dataSource = self;
     
@@ -36,7 +36,7 @@
     [currentuser refresh];
     if (currentuser) {
         _welcomeMessage.text = [NSString stringWithFormat:@"Welcome %@ %@", [currentuser objectForKey:@"firstName"], [currentuser objectForKey:@"lastName"]];
-        //bool *temp = [[currentuser objectForKey:@"smsBlock"]];
+        
         smsBlock = [[currentuser objectForKey:@"smsBlock"]boolValue] == YES? @"ON" : @"OFF";
         drunkDriving = [[currentuser objectForKey:@"drunkDriving"]boolValue] == YES ? @"ON" : @"OFF";
         speedTrack = [[currentuser objectForKey:@"speedTrack"]boolValue] == YES ? @"ON" : @"OFF";
