@@ -34,6 +34,7 @@
 		E3A1375618997CB600AFF302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373818997CB600AFF302 /* UIKit.framework */; };
 		E3A1375E18997CB600AFF302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3A1375C18997CB600AFF302 /* InfoPlist.strings */; };
 		E3A1376018997CB600AFF302 /* xcodeSafeDrivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A1375F18997CB600AFF302 /* xcodeSafeDrivingTests.m */; };
+		E3CC951A189F1C89001160CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CC9519189F1C89001160CF /* RegisterViewController.m */; };
 		E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB1B189985DC00C5483C /* Parse.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		E3A1375B18997CB600AFF302 /* xcodeSafeDrivingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "xcodeSafeDrivingTests-Info.plist"; sourceTree = "<group>"; };
 		E3A1375D18997CB600AFF302 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E3A1375F18997CB600AFF302 /* xcodeSafeDrivingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xcodeSafeDrivingTests.m; sourceTree = "<group>"; };
+		E3CC9518189F1C89001160CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E3CC9519189F1C89001160CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				122EBB301899A0EF00C5483C /* CurrentSpeedViewController.m */,
 				122EBB321899A79E00C5483C /* MapViewController.h */,
 				122EBB331899A79E00C5483C /* MapViewController.m */,
+				E3CC9518189F1C89001160CF /* RegisterViewController.h */,
+				E3CC9519189F1C89001160CF /* RegisterViewController.m */,
 			);
 			path = xcodeSafeDriving;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				E3A1374B18997CB600AFF302 /* ViewController.m in Sources */,
 				E3A1374518997CB600AFF302 /* AppDelegate.m in Sources */,
 				122EBB2E1899A0DA00C5483C /* SettingsViewController.m in Sources */,
+				E3CC951A189F1C89001160CF /* RegisterViewController.m in Sources */,
 				E3A1374118997CB600AFF302 /* main.m in Sources */,
 				122EBB2B1899A0C600C5483C /* MainViewController.m in Sources */,
 				122EBB341899A79E00C5483C /* MapViewController.m in Sources */,
