@@ -65,9 +65,6 @@
 
 }
 
-- (IBAction)registerBtn:(id)sender {
-}
-
 
 - (IBAction)resetPasswordBtn:(id)sender {
 }

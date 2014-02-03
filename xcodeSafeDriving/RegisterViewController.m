@@ -27,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _remailField.delegate = self;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,6 +41,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 - (IBAction)Register:(id)sender {
@@ -132,7 +143,7 @@
             _rbloodGroupField.text = @"";
             _rbirthdayField.text = @"";
             NSLog(@"Registration success!");
-            [self performSegueWithIdentifier:@"login" sender:self];
+            [self performSegueWithIdentifier:@"registing" sender:self];
         }
         else {
             [_ractivityLayView stopAnimating];

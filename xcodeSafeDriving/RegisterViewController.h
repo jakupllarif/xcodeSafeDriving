@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UITableViewController
+@interface RegisterViewController : UITableViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *rfnameField;
 @property (weak, nonatomic) IBOutlet UITextField *rlnameField;
