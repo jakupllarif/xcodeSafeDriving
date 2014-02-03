@@ -15,6 +15,8 @@
 
 @implementation RegisterViewController
 
+@synthesize birthDate;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -28,8 +30,7 @@
 {
     [super viewDidLoad];
     
-    _remailField.delegate = self;
-
+    //_rbirthdayField.delegate = self;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -43,14 +44,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return NO;
-}
+//hide keyboard when scroll
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    [_rfnameField resignFirstResponder];
+//    [_rlnameField resignFirstResponder];
+//    [_rgenderField resignFirstResponder];
+//    [_rbloodGroupField resignFirstResponder];
+//    [_rphoneNumberField resignFirstResponder];
+//    [_rusernameField resignFirstResponder];
+//    [_rpasswordField resignFirstResponder];
+//    [_rrepasswordField resignFirstResponder];
+//    [_remailField resignFirstResponder];
+//}
 
 - (IBAction)Register:(id)sender {
     [_rfnameField resignFirstResponder];
@@ -152,6 +157,122 @@
             NSLog(@"There was an error in registration");
         }
     }];
+}
+
+- (void)setBirth {
+    
+    dateSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    [dateSheet setActionSheetStyle:UIActionSheetStyleDefault];
+    CGRect pickerFrame = CGRectMake(0, 44, 0, 0);
+    UIDatePicker *birthDayPicker = [[UIDatePicker alloc] initWithFrame:pickerFrame];
+    [birthDayPicker setDatePickerMode:UIDatePickerModeDate];
+    [dateSheet addSubview:birthDayPicker];
+    
+    UIToolbar *controlToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, dateSheet.bounds.size.width, 44)];
+    [controlToolBar setBarStyle:UIBarStyleDefault];
+    [controlToolBar sizeToFit];
+    
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *setButton = [[UIBarButtonItem alloc] initWithTitle:@"Set" style:UIBarButtonItemStyleDone target:self action:@selector(dismissDateSet)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelDateSet)];
+    [controlToolBar setItems:[NSArray arrayWithObjects:spacer, cancelButton, setButton, nil] animated:NO];
+    
+    [dateSheet addSubview:controlToolBar];
+    [dateSheet showInView:self.view];
+    [dateSheet setBounds:CGRectMake(0, 0, 320, 485)];
+}
+
+-(void)cancelDateSet {
+    [dateSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+
+-(void)dismissDateSet {
+    NSArray *listOfViews = [dateSheet subviews];
+    for (UIView *subView in listOfViews) {
+        if ([subView isKindOfClass:[UIDatePicker class]]) {
+            self.birthDate = [(UIDatePicker *)subView date];
+        }
+    }
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    
+    //if user put date that has not happened yet, show error
+    NSCalendar *calender = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSDateComponents *calcBirthday = [calender components:unitFlags fromDate:self.birthDate toDate:[NSDate date] options:0];
+    int months = [calcBirthday month];
+    int days = [calcBirthday day];
+    int years = [calcBirthday year];
+    if (years < 0 || days < 0 || months < 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Not Born Yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    } else
+        [_rbirthdayField setText:[dateFormatter stringFromDate:self.birthDate]];
+    [dateSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+
+-(void)setGender {
+    UIActionSheet *genderSet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Male", @"Female", nil];
+    [genderSet setTag:0];
+    [genderSet showInView:self.view];
+}
+
+-(void)setBloodGroup {
+    UIActionSheet *bloodGroupSet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"A", @"B", @"O", @"AB", nil];
+    [bloodGroupSet setTag:1];
+    [bloodGroupSet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (actionSheet.tag) {
+        case 0:
+        {
+            if (buttonIndex == 0)
+                [_rgenderField setText:@"Male"];
+            else if (buttonIndex == 1)
+                [_rgenderField setText:@"Femal"];
+        }
+            break;
+            
+        case 1:
+        {
+            if (buttonIndex == 0)
+                [_rbloodGroupField setText:@"A"];
+            else if (buttonIndex == 1)
+                [_rbloodGroupField setText:@"B"];
+            else if (buttonIndex == 2)
+                [_rbloodGroupField setText:@"O"];
+            else if (buttonIndex == 3)
+                [_rbloodGroupField setText:@"AB"];
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField.tag == 1) {
+        [self setGender];
+        return NO;
+    }
+    else if (textField.tag == 2) {
+        [self setBirth];
+        return NO;
+    }
+    else if (textField.tag == 3) {
+        [self setBloodGroup];
+        return NO;
+    } else
+        return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField.tag == 4)
+        [textField resignFirstResponder];
+    return NO;
 }
 
 /*#pragma mark - Table view data source

@@ -13,6 +13,7 @@
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

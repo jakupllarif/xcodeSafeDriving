@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UITableViewController<UITextFieldDelegate>
+@interface RegisterViewController : UITableViewController<UITextFieldDelegate, UIActionSheetDelegate> {
+    UIActionSheet *dateSheet;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *rfnameField;
 @property (weak, nonatomic) IBOutlet UITextField *rlnameField;
@@ -23,7 +25,14 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *ractivityLayView;
 
+@property (weak, nonatomic) NSDate *birthDate;
+
 - (IBAction)Register:(id)sender;
+- (void) setBirth;
+- (void) dismissDateSet;
+- (void) cancelDateSet;
+- (void) setGender;
+- (void) setBloodGroup;
 
 
 @end
