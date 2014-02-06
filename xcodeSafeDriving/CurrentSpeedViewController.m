@@ -7,17 +7,27 @@
 //
 
 #import "CurrentSpeedViewController.h"
+#import "UtilityFunctions.h"
+#import <Parse/Parse.h>
+
+@interface CurrentSpeedViewController()
+{
+    PFUser *currentuser;
+}
+@end
 
 @implementation CurrentSpeedViewController {
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
+    BOOL smsBlock;
+    BOOL speedTrack;
 }
 
 -(void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    currentuser = [PFUser currentUser];
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     
@@ -29,6 +39,11 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [currentuser refresh];
+    if (currentuser) {
+        smsBlock = [currentuser[@"smsBlock"] boolValue];
+        speedTrack = [currentuser[@"speedTrack"] boolValue];
+    }
     [locationManager startUpdatingLocation];
 }
 
@@ -44,6 +59,11 @@
     
     if (currentLocation != nil) {
         double speed = currentLocation.speed <= 0.00 ? 0 : currentLocation.speed;
+        //calling Utility
+        if (smsBlock)
+            [UtilityFunctions smsBlocking:speed];
+        if (speedTrack)
+            [UtilityFunctions speedTrack:speed];
         //update the progress bar to change color depending on the speed
         [self updateProgressBar:speed];
         //update the label showing the current speed
@@ -53,7 +73,7 @@
     // Reverse Geocoding
     NSLog(@"Resolving the Address");
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
             _addressLabel.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@", placemark.subThoroughfare, placemark.thoroughfare, placemark.postalCode, placemark.locality, placemark.administrativeArea, placemark.country];
