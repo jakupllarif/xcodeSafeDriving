@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121A0F8718A32A7B000869C7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F8618A32A7B000869C7 /* SettingsViewController.m */; };
 		122EBB12189985C600C5483C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB09189985C600C5483C /* AudioToolbox.framework */; };
 		122EBB13189985C600C5483C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0A189985C600C5483C /* CFNetwork.framework */; };
 		122EBB14189985C600C5483C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0B189985C600C5483C /* CoreLocation.framework */; };
@@ -19,7 +20,6 @@
 		122EBB2B1899A0C600C5483C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB2A1899A0C600C5483C /* MainViewController.m */; };
 		122EBB311899A0EF00C5483C /* CurrentSpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB301899A0EF00C5483C /* CurrentSpeedViewController.m */; };
 		122EBB341899A79E00C5483C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB331899A79E00C5483C /* MapViewController.m */; };
-		E374167D18A3215900073B82 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E374167C18A3215900073B82 /* SettingsViewController.m */; };
 		E3A1373518997CB600AFF302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373418997CB600AFF302 /* Foundation.framework */; };
 		E3A1373718997CB600AFF302 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373618997CB600AFF302 /* CoreGraphics.framework */; };
 		E3A1373918997CB600AFF302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373818997CB600AFF302 /* UIKit.framework */; };
@@ -49,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121A0F8518A32A7B000869C7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		121A0F8618A32A7B000869C7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		122EBB09189985C600C5483C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		122EBB0A189985C600C5483C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		122EBB0B189985C600C5483C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -65,8 +67,6 @@
 		122EBB301899A0EF00C5483C /* CurrentSpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentSpeedViewController.m; sourceTree = "<group>"; };
 		122EBB321899A79E00C5483C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		122EBB331899A79E00C5483C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		E374167B18A3215900073B82 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		E374167C18A3215900073B82 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E3A1373118997CB600AFF302 /* xcodeSafeDriving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xcodeSafeDriving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A1373418997CB600AFF302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E3A1373618997CB600AFF302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,8 +182,8 @@
 				122EBB331899A79E00C5483C /* MapViewController.m */,
 				E3CC9518189F1C89001160CF /* RegisterViewController.h */,
 				E3CC9519189F1C89001160CF /* RegisterViewController.m */,
-				E374167B18A3215900073B82 /* SettingsViewController.h */,
-				E374167C18A3215900073B82 /* SettingsViewController.m */,
+				121A0F8518A32A7B000869C7 /* SettingsViewController.h */,
+				121A0F8618A32A7B000869C7 /* SettingsViewController.m */,
 			);
 			path = xcodeSafeDriving;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 				122EBB311899A0EF00C5483C /* CurrentSpeedViewController.m in Sources */,
 				E3A1374B18997CB600AFF302 /* ViewController.m in Sources */,
 				E3A1374518997CB600AFF302 /* AppDelegate.m in Sources */,
-				E374167D18A3215900073B82 /* SettingsViewController.m in Sources */,
+				121A0F8718A32A7B000869C7 /* SettingsViewController.m in Sources */,
 				E3CC951A189F1C89001160CF /* RegisterViewController.m in Sources */,
 				E3A1374118997CB600AFF302 /* main.m in Sources */,
 				122EBB2B1899A0C600C5483C /* MainViewController.m in Sources */,

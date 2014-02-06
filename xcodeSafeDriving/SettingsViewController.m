@@ -2,119 +2,60 @@
 //  SettingsViewController.m
 //  xcodeSafeDriving
 //
-//  Created by Flodjana Jakupllari on 2/5/14.
+//  Created by Gabriel Liu on 2/5/14.
 //  Copyright (c) 2014 Jakupllari F. & Liu Z. All rights reserved.
 //
 
 #import "SettingsViewController.h"
+#import <Parse/Parse.h>
 
-@interface SettingsViewController ()
-
+@interface SettingsViewController()
+{
+    PFUser *currentuser;
+}
 @end
 
 @implementation SettingsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    currentuser = [PFUser currentUser];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [currentuser refresh];
+    if (currentuser) {
+        _smsBlockSwitch.on = [[currentuser objectForKey:@"smsBlock"]boolValue];
+        _drunkDrivingSwitch.on = [[currentuser objectForKey:@"drunkDriving"]boolValue];
+        _speedTrackSwitch.on = [[currentuser objectForKey:@"speedTrack"]boolValue];
+        _emergencyNotificationSwitch.on = [[currentuser objectForKey:@"emergencyNotification"]boolValue];
+    }
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (IBAction)logoutBtn:(id)sender {
+    [PFUser logOut];
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (IBAction)smsBlockOnOff:(id)sender {
+    currentuser[@"smsBlock"] = _smsBlockSwitch.on ? @YES : @NO;
+    [currentuser saveInBackground];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (IBAction)drunkDrivingOnOff:(id)sender {
+    currentuser[@"drunkDriving"] = _drunkDrivingSwitch.on ? @YES : @NO;
+    [currentuser saveInBackground];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)speedTrackOnOff:(id)sender {
+    currentuser[@"speedTrack"] = _speedTrackSwitch.on ? @YES : @NO;
+    [currentuser saveInBackground];
 }
 
- */
-
+- (IBAction)emergencyNotificationOnOff:(id)sender {
+    currentuser[@"emergencyNotification"] = _emergencyNotificationSwitch.on ? @YES : @NO;
+    [currentuser saveInBackground];
+}
 @end
