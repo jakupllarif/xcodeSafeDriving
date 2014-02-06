@@ -13,5 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *greenProgressBar;
+@property (weak, nonatomic) IBOutlet UIProgressView *yellowProgressBar;
+@property (weak, nonatomic) IBOutlet UIProgressView *redProgressBar;
 
 @end

@@ -43,7 +43,11 @@
     CLLocation *currentLocation = newLocation;
     
     if (currentLocation != nil) {
-        _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", currentLocation.speed <= 0.00 ? 0 : currentLocation.speed];
+        double speed = currentLocation.speed <= 0.00 ? 0 : currentLocation.speed;
+        //update the progress bar to change color depending on the speed
+        [self updateProgressBar:speed];
+        //update the label showing the current speed
+        _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", speed];
     }
     
     // Reverse Geocoding
@@ -57,6 +61,28 @@
             NSLog(@"%@", error.debugDescription);
         }
     } ];
+}
+
+
+
+//changes the color of the progress bars according to the value of the speed
+- (void) updateProgressBar : (double) speedNumber{
+    _greenProgressBar.Progress = 0.0f;
+    _yellowProgressBar.Progress = 0.0f;
+    _redProgressBar.Progress = 0.0f;
+    
+    //update progress bars according to the current speed
+    if (speedNumber <= 30) {
+        _greenProgressBar.Progress = (float)speedNumber / 30.0f;
+    }
+    else if (speedNumber > 30 && speedNumber <= 36) {
+        _greenProgressBar.Progress = (float)100 / 10.0f;
+        _yellowProgressBar.Progress = (float)(speedNumber-30) / 10.0f;
+    } else {
+        _greenProgressBar.Progress = (float)100 / 10.0f;
+        _yellowProgressBar.Progress = (float)100 / 10.0f;
+        _redProgressBar.Progress = (float)(speedNumber-40) / 20.0f;
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
