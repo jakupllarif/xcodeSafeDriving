@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121A0F7E18A31C44000869C7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F7D18A31C44000869C7 /* SettingViewController.m */; };
 		122EBB12189985C600C5483C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB09189985C600C5483C /* AudioToolbox.framework */; };
 		122EBB13189985C600C5483C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0A189985C600C5483C /* CFNetwork.framework */; };
 		122EBB14189985C600C5483C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0B189985C600C5483C /* CoreLocation.framework */; };
@@ -34,7 +35,6 @@
 		E3A1375E18997CB600AFF302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3A1375C18997CB600AFF302 /* InfoPlist.strings */; };
 		E3A1376018997CB600AFF302 /* xcodeSafeDrivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A1375F18997CB600AFF302 /* xcodeSafeDrivingTests.m */; };
 		E3CC951A189F1C89001160CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CC9519189F1C89001160CF /* RegisterViewController.m */; };
-		E3CC951D189F40D6001160CF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CC951C189F40D6001160CF /* SettingsViewController.m */; };
 		E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB1B189985DC00C5483C /* Parse.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121A0F7C18A31C44000869C7 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		121A0F7D18A31C44000869C7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		122EBB09189985C600C5483C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		122EBB0A189985C600C5483C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		122EBB0B189985C600C5483C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -86,8 +88,6 @@
 		E3A1375F18997CB600AFF302 /* xcodeSafeDrivingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xcodeSafeDrivingTests.m; sourceTree = "<group>"; };
 		E3CC9518189F1C89001160CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E3CC9519189F1C89001160CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		E3CC951B189F40D6001160CF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		E3CC951C189F40D6001160CF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +182,8 @@
 				122EBB331899A79E00C5483C /* MapViewController.m */,
 				E3CC9518189F1C89001160CF /* RegisterViewController.h */,
 				E3CC9519189F1C89001160CF /* RegisterViewController.m */,
-				E3CC951B189F40D6001160CF /* SettingsViewController.h */,
-				E3CC951C189F40D6001160CF /* SettingsViewController.m */,
+				121A0F7C18A31C44000869C7 /* SettingViewController.h */,
+				121A0F7D18A31C44000869C7 /* SettingViewController.m */,
 			);
 			path = xcodeSafeDriving;
 			sourceTree = "<group>";
@@ -320,11 +320,11 @@
 				122EBB311899A0EF00C5483C /* CurrentSpeedViewController.m in Sources */,
 				E3A1374B18997CB600AFF302 /* ViewController.m in Sources */,
 				E3A1374518997CB600AFF302 /* AppDelegate.m in Sources */,
-				E3CC951D189F40D6001160CF /* SettingsViewController.m in Sources */,
 				E3CC951A189F1C89001160CF /* RegisterViewController.m in Sources */,
 				E3A1374118997CB600AFF302 /* main.m in Sources */,
 				122EBB2B1899A0C600C5483C /* MainViewController.m in Sources */,
 				122EBB341899A79E00C5483C /* MapViewController.m in Sources */,
+				121A0F7E18A31C44000869C7 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
