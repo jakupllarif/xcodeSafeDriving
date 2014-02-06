@@ -98,14 +98,17 @@
     //update progress bars according to the current speed
     if (speedNumber <= 30) {
         _greenProgressBar.Progress = (float)speedNumber / 30.0f;
+        _currentSpeedLabel.textColor = [UIColor greenColor];
     }
     else if (speedNumber > 30 && speedNumber <= 36) {
         _greenProgressBar.Progress = (float)100 / 10.0f;
         _yellowProgressBar.Progress = (float)(speedNumber-30) / 10.0f;
+        _currentSpeedLabel.textColor = [UIColor yellowColor];
     } else {
         _greenProgressBar.Progress = (float)100 / 10.0f;
         _yellowProgressBar.Progress = (float)100 / 10.0f;
         _redProgressBar.Progress = (float)(speedNumber-40) / 20.0f;
+        _currentSpeedLabel.textColor = [UIColor redColor];
     }
 }
 
