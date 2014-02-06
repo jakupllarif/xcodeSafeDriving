@@ -56,6 +56,7 @@
                                 </state>
                                 <connections>
                                     <action selector="resetPasswordBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sGu-Kl-IaK"/>
+                                    <segue destination="ApD-7M-4g8" kind="modal" id="7Rx-h5-TJo"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="y5f-au-aTN">
@@ -66,7 +67,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.53935660549999997" green="0.60679273759999997" blue="0.67694887910000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Lfc-ZL-fe7"/>
                     <connections>
                         <outlet property="activityLayView" destination="y5f-au-aTN" id="MAl-h7-Dbt"/>
                         <outlet property="passwordField" destination="dUW-Mx-BeC" id="y7T-KW-fCc"/>
@@ -77,6 +77,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3140" y="-976"/>
+        </scene>
+        <!--View Controller - Reset Password-->
+        <scene sceneID="gdp-X4-7in">
+            <objects>
+                <viewController id="T8w-LN-rAg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2rg-1W-vab"/>
+                        <viewControllerLayoutGuide type="bottom" id="hQi-1u-uc7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Na0-c1-gVO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="something@example.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIw-Nr-qYv">
+                                <rect key="frame" x="20" y="367" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your email address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJY-Fg-EOW">
+                                <rect key="frame" x="20" y="338" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8if-xh-Hpr">
+                                <rect key="frame" x="20" y="463" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions to reset password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9x-cD-omJ">
+                                <rect key="frame" x="20" y="83" width="237" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reset Password" id="Gi9-XP-ngJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zpm-BJ-2E7">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="modal" id="ZgK-Ab-RMz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5QP-i8-N4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2196" y="-1349"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="UbC-gW-oDy">
@@ -143,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwV-Yf-3PA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1658" y="-1514"/>
+            <point key="canvasLocation" x="-1132" y="-1514"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dRR-8K-Ulr">
@@ -163,7 +216,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGo-wP-MKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2440" y="-793"/>
+            <point key="canvasLocation" x="-1914" y="-793"/>
         </scene>
         <!--Current Speed View Controller-->
         <scene sceneID="5wq-0S-Y7h">
@@ -260,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGJ-ew-MOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132" y="-788"/>
+            <point key="canvasLocation" x="-606" y="-788"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="HO9-xc-785">
@@ -281,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoA-uk-6Bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="-788"/>
+            <point key="canvasLocation" x="-94" y="-788"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="gml-DL-eSg">
@@ -454,7 +507,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlA-0A-nl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1658" y="-788"/>
+            <point key="canvasLocation" x="-1132" y="-788"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="jrj-rg-cEh">
@@ -814,6 +867,24 @@
             </objects>
             <point key="canvasLocation" x="-1658" y="97"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QKj-dO-aC9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ApD-7M-4g8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0S8-uf-sUH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T8w-LN-rAg" kind="relationship" relationship="rootViewController" id="Ict-3X-FGY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnn-U8-l5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2722" y="-1349"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -821,6 +892,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RrY-ND-rDg"/>
+        <segue reference="JIa-KR-qdG"/>
+        <segue reference="ZgK-Ab-RMz"/>
     </inferredMetricsTieBreakers>
 </document>
