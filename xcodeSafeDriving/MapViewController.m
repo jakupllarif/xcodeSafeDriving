@@ -10,4 +10,8 @@
 
 @implementation MapViewController
 
+-(void)viewDidLoad {
+    [super viewDidLoad];
+}
+
 @end

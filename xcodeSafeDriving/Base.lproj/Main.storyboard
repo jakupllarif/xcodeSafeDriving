@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -55,8 +55,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetPasswordBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sGu-Kl-IaK"/>
-                                    <segue destination="ApD-7M-4g8" kind="modal" id="7Rx-h5-TJo"/>
+                                    <segue destination="ApD-7M-4g8" kind="modal" modalTransitionStyle="flipHorizontal" id="7Rx-h5-TJo"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="y5f-au-aTN">
@@ -76,12 +75,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3140" y="-976"/>
+            <point key="canvasLocation" x="-3330" y="-793"/>
         </scene>
-        <!--View Controller - Reset Password-->
+        <!--Reset Password View Controller - Reset Password-->
         <scene sceneID="gdp-X4-7in">
             <objects>
-                <viewController id="T8w-LN-rAg" sceneMemberID="viewController">
+                <viewController id="T8w-LN-rAg" customClass="ResetPasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2rg-1W-vab"/>
                         <viewControllerLayoutGuide type="bottom" id="hQi-1u-uc7"/>
@@ -109,6 +108,9 @@
                                 <state key="normal" title="Reset Password">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetPasswordBtn:" destination="T8w-LN-rAg" eventType="touchUpInside" id="hTg-fy-bTl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions to reset password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9x-cD-omJ">
                                 <rect key="frame" x="20" y="83" width="237" height="21"/>
@@ -122,14 +124,17 @@
                     <navigationItem key="navigationItem" title="Reset Password" id="Gi9-XP-ngJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zpm-BJ-2E7">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="modal" id="ZgK-Ab-RMz"/>
+                                <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="flipHorizontal" id="ZgK-Ab-RMz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailAddressField" destination="XIw-Nr-qYv" id="0nk-Xc-uCw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5QP-i8-N4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2196" y="-1349"/>
+            <point key="canvasLocation" x="-2760" y="-1661"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="UbC-gW-oDy">
@@ -196,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwV-Yf-3PA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132" y="-1514"/>
+            <point key="canvasLocation" x="-1600" y="-1622"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dRR-8K-Ulr">
@@ -216,7 +221,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGo-wP-MKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1914" y="-793"/>
+            <point key="canvasLocation" x="-2376" y="-793"/>
         </scene>
         <!--Current Speed View Controller-->
         <scene sceneID="5wq-0S-Y7h">
@@ -313,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGJ-ew-MOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-606" y="-788"/>
+            <point key="canvasLocation" x="-1074" y="-896"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="HO9-xc-785">
@@ -334,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoA-uk-6Bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="-788"/>
+            <point key="canvasLocation" x="-562" y="-896"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="gml-DL-eSg">
@@ -488,7 +493,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqC-Fq-k7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132" y="97"/>
+            <point key="canvasLocation" x="-1074" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Js1-ig-RsA">
@@ -507,7 +512,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlA-0A-nl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132" y="-788"/>
+            <point key="canvasLocation" x="-1600" y="-896"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="jrj-rg-cEh">
@@ -828,7 +833,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6P-nd-vor" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2842" y="-44"/>
+            <point key="canvasLocation" x="-2760" y="-48"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gNL-Lj-agE">
@@ -865,7 +870,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvP-bf-rLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1658" y="97"/>
+            <point key="canvasLocation" x="-1600" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QKj-dO-aC9">
@@ -883,7 +888,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnn-U8-l5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2722" y="-1349"/>
+            <point key="canvasLocation" x="-3330" y="-1661"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -892,7 +897,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JIa-KR-qdG"/>
         <segue reference="ZgK-Ab-RMz"/>
+        <segue reference="JIa-KR-qdG"/>
     </inferredMetricsTieBreakers>
 </document>

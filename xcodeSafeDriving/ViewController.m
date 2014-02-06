@@ -65,8 +65,4 @@
 
 }
 
-
-- (IBAction)resetPasswordBtn:(id)sender {
-}
-
 @end
