@@ -10,6 +10,7 @@
 		121A0F8718A32A7B000869C7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F8618A32A7B000869C7 /* SettingsViewController.m */; };
 		121A0F8A18A33491000869C7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F8918A33491000869C7 /* UtilityFunctions.m */; };
 		121A0F9118A429A9000869C7 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F9018A429A9000869C7 /* ResetPasswordViewController.m */; };
+		121A0F9318A43D5B000869C7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 121A0F9218A43D5B000869C7 /* libsqlite3.dylib */; };
 		122EBB12189985C600C5483C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB09189985C600C5483C /* AudioToolbox.framework */; };
 		122EBB13189985C600C5483C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0A189985C600C5483C /* CFNetwork.framework */; };
 		122EBB14189985C600C5483C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB0B189985C600C5483C /* CoreLocation.framework */; };
@@ -57,6 +58,7 @@
 		121A0F8918A33491000869C7 /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		121A0F8F18A429A9000869C7 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
 		121A0F9018A429A9000869C7 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		121A0F9218A43D5B000869C7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		122EBB09189985C600C5483C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		122EBB0A189985C600C5483C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		122EBB0B189985C600C5483C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121A0F9318A43D5B000869C7 /* libsqlite3.dylib in Frameworks */,
 				E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */,
 				122EBB12189985C600C5483C /* AudioToolbox.framework in Frameworks */,
 				122EBB13189985C600C5483C /* CFNetwork.framework in Frameworks */,
@@ -152,6 +155,7 @@
 		E3A1373318997CB600AFF302 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				121A0F9218A43D5B000869C7 /* libsqlite3.dylib */,
 				122EBB1B189985DC00C5483C /* Parse.framework */,
 				122EBB09189985C600C5483C /* AudioToolbox.framework */,
 				122EBB0A189985C600C5483C /* CFNetwork.framework */,

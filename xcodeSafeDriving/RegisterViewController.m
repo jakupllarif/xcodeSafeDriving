@@ -201,9 +201,9 @@
     NSCalendar *calender = [NSCalendar currentCalendar];
     unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
     NSDateComponents *calcBirthday = [calender components:unitFlags fromDate:self.birthDate toDate:[NSDate date] options:0];
-    int months = [calcBirthday month];
-    int days = [calcBirthday day];
-    int years = [calcBirthday year];
+    NSInteger months = [calcBirthday month];
+    NSInteger days = [calcBirthday day];
+    NSInteger years = [calcBirthday year];
     if (years < 0 || days < 0 || months < 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Not Born Yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
