@@ -22,11 +22,15 @@
     CLPlacemark *placemark;
     BOOL smsBlock;
     BOOL speedTrack;
+    int speedSystem;
 }
 
 -(void)viewDidLoad {
     
     [super viewDidLoad];
+    _kmmileSegControl.selectedSegmentIndex = 0; //preselect km/h as a speed system
+    speedSystem = 3.6; //set the speed system to km/h
+    
     currentuser = [PFUser currentUser];
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
@@ -59,15 +63,15 @@
     
     if (currentLocation != nil) {
         double speed = currentLocation.speed <= 0.00 ? 0 : currentLocation.speed;
-        //calling Utility
+        //calling Utility functions
         if (smsBlock)
             [UtilityFunctions smsBlocking:speed];
         if (speedTrack)
             [UtilityFunctions speedTrack:speed];
         //update the progress bar to change color depending on the speed
         [self updateProgressBar:speed];
-        //update the label showing the current speed
-        _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", speed];
+        //update the label showing the current speed, in the current system
+        _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", (speed * speedSystem)];
     }
     
     // Reverse Geocoding
@@ -108,4 +112,20 @@
 -(void)viewWillDisappear:(BOOL)animated {
     [locationManager stopUpdatingLocation];
 }
+
+//change the system of the showing speed: km/h or mile/h
+- (IBAction)kmmileSegmentedControl:(id)sender {
+    if(_kmmileSegControl.selectedSegmentIndex == 0)
+        speedSystem = 3.6; //km system
+    else if (_kmmileSegControl.selectedSegmentIndex == 1)
+        speedSystem = 2.24; //mile system
+}
 @end
+
+
+
+
+
+
+
+

@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *greenProgressBar;
 @property (weak, nonatomic) IBOutlet UIProgressView *yellowProgressBar;
 @property (weak, nonatomic) IBOutlet UIProgressView *redProgressBar;
+- (IBAction)kmmileSegmentedControl:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *kmmileSegControl;
 
 @end

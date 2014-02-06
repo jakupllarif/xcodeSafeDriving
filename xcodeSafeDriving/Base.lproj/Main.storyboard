@@ -177,13 +177,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hS9-LZ-FP1">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hS9-LZ-FP1">
                                 <rect key="frame" x="99" y="79" width="123" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="km/h"/>
+                                    <segment title="mile/h"/>
                                 </segments>
+                                <connections>
+                                    <action selector="kmmileSegmentedControl:" destination="RXo-sT-LPh" eventType="valueChanged" id="r5H-JG-mO9"/>
+                                </connections>
                             </segmentedControl>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-pW-DWh">
                                 <rect key="frame" x="20" y="127" width="117" height="2"/>
@@ -250,6 +253,7 @@
                         <outlet property="addressLabel" destination="WRu-7w-dCF" id="l8c-y3-7bp"/>
                         <outlet property="currentSpeedLabel" destination="6Lb-6q-ZNc" id="zS1-aL-HEp"/>
                         <outlet property="greenProgressBar" destination="gvt-pW-DWh" id="8JO-05-7kg"/>
+                        <outlet property="kmmileSegControl" destination="hS9-LZ-FP1" id="uBv-47-2Te"/>
                         <outlet property="redProgressBar" destination="HQV-8w-Veh" id="wXj-PE-rdp"/>
                         <outlet property="yellowProgressBar" destination="MhW-No-VRw" id="EXh-fj-za5"/>
                     </connections>
