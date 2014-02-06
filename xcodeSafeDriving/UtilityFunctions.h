@@ -12,5 +12,5 @@
 
 + (void)speedTrack:(double) currentSpeed;
 + (void)smsBlocking:(double) currengSpeed;
-
++ (void)drunkDriving;
 @end

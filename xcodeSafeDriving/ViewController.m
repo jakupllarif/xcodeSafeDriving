@@ -22,6 +22,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    
     PFUser *user = [PFUser currentUser];
     [user refresh];
     if (user.username != nil)

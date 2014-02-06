@@ -8,6 +8,14 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
+#import "UtilityFunctions.h"
+
+@interface MainViewController()
+{
+    PFUser *currentuser;
+    BOOL drinkDriveAlert;
+}
+@end
 
 @interface MainViewController ()
 {
@@ -32,8 +40,12 @@
     }
 
 -(void)viewWillAppear:(BOOL)animated{
-    PFUser *currentuser = [PFUser currentUser];
+    currentuser = [PFUser currentUser];
     [currentuser refresh];
+    drinkDriveAlert = [currentuser[@"drunkDriving"]boolValue];
+    if (drinkDriveAlert) {
+        [UtilityFunctions drunkDriving];
+    }
     if (currentuser) {
         _welcomeMessage.text = [NSString stringWithFormat:@"Welcome %@ %@", [currentuser objectForKey:@"firstName"], [currentuser objectForKey:@"lastName"]];
         

@@ -36,6 +36,11 @@ static bool smsAlert = false;
     }
 }
 
++(void)drunkDriving {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Driving after drunk is dangerous!" message:@"Please don't drive after drunk!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
 +(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 101) {
         if (buttonIndex == [alertView cancelButtonIndex]) {
