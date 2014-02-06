@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResetPasswordViewController : UIViewController<UITextFieldDelegate>
+@interface ResetPasswordViewController : UIViewController<UIAlertViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *resetActivity;
 - (IBAction)resetPasswordBtn:(id)sender;
 
 @end

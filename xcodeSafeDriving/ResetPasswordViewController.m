@@ -36,6 +36,7 @@
 }
 
 - (IBAction)resetPasswordBtn:(id)sender {
+    [_resetActivity startAnimating];
     PFQuery *query = [PFUser query];
     email = _emailAddressField.text;
     if (email != nil) {
@@ -43,12 +44,22 @@
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             if (!error) {
                 [PFUser requestPasswordResetForEmailInBackground:email];
+                [_resetActivity stopAnimating];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Succeed!" message:@"Reset link is sent to your email address!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
             } else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooopss!" message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooooopss!" message:[error userInfo][@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alert show];
             }
         }];
     }
     
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 @end
