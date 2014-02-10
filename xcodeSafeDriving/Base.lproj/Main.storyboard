@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -269,7 +269,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="km/h"/>
-                                    <segment title="mile/h"/>
+                                    <segment title="MPH"/>
                                 </segments>
                                 <connections>
                                     <action selector="kmmileSegmentedControl:" destination="RXo-sT-LPh" eventType="valueChanged" id="r5H-JG-mO9"/>
@@ -298,7 +298,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52g-YC-KTn">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52g-YC-KTn">
                                 <rect key="frame" x="182" y="238" width="118" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
@@ -342,6 +342,7 @@
                         <outlet property="greenProgressBar" destination="gvt-pW-DWh" id="8JO-05-7kg"/>
                         <outlet property="kmmileSegControl" destination="hS9-LZ-FP1" id="uBv-47-2Te"/>
                         <outlet property="redProgressBar" destination="HQV-8w-Veh" id="wXj-PE-rdp"/>
+                        <outlet property="speedLimitLabel" destination="52g-YC-KTn" id="Zjd-CB-B78"/>
                         <outlet property="yellowProgressBar" destination="MhW-No-VRw" id="EXh-fj-za5"/>
                     </connections>
                 </viewController>

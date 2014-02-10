@@ -13,8 +13,7 @@ static bool smsAlert = false;
 
 @implementation UtilityFunctions
 
-+(void)speedTrack:(double)currentSpeed {
-    double speedLimit = 30.0;
++(void)speedTrack:(double)currentSpeed :(double)speedLimit{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Overspeeding" message:@"Slow down for your safety." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     alert.tag = 101;
     if (currentSpeed > speedLimit && speedAlert == false) {

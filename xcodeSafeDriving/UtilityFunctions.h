@@ -10,7 +10,7 @@
 
 @interface UtilityFunctions : NSObject<UIAlertViewDelegate>
 
-+ (void)speedTrack:(double) currentSpeed;
++ (void)speedTrack:(double) currentSpeed :(double)speedLimit;
 + (void)smsBlocking:(double) currengSpeed;
 + (void)drunkDriving;
 @end
