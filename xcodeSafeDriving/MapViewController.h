@@ -11,4 +11,8 @@
 
 @interface MapViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet MKMapView *map;
+- (IBAction)mapSegmentedControl:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
 @end
