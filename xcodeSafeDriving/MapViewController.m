@@ -21,8 +21,7 @@
 }
 
 - (void)map:(MKMapView *)map didUpdateUserLocation:(MKUserLocation *)userLocation{
-    _map.centerCoordinate =
-    userLocation.location.coordinate;
+    _map.centerCoordinate = userLocation.location.coordinate;
 }
 
 - (IBAction)mapSegmentedControl:(id)sender {
@@ -39,5 +38,10 @@
         default:
             break;
     }
+}
+- (IBAction)zoomBtn:(id)sender {
+    MKUserLocation *userLocation = _map.userLocation;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (userLocation.location.coordinate, 20000, 20000);
+    [_map setRegion:region animated:NO];
 }
 @end

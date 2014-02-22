@@ -15,4 +15,5 @@
 - (IBAction)mapSegmentedControl:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
+- (IBAction)zoomBtn:(id)sender;
 @end
