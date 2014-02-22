@@ -91,8 +91,10 @@
             [UtilityFunctions smsBlocking:speed];
         if (speedTrack)
             [UtilityFunctions speedTrack:speed :speedLimit];
+        
         //update the progress bar to change color depending on the speed
-        [self updateProgressBar:speed];
+        [self updateProgressBar:speed limit:speedLimit];
+        
         //update the label showing the current speed, in the current system
         _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2f", speed];
     }
@@ -113,24 +115,24 @@
 
 
 //changes the color of the progress bars according to the value of the speed
-- (void) updateProgressBar : (double) speedNumber{
+- (void) updateProgressBar : (double) speedNumber limit:(double) speedLimit{
     _greenProgressBar.Progress = 0.0f;
     _yellowProgressBar.Progress = 0.0f;
     _redProgressBar.Progress = 0.0f;
     
     //update progress bars according to the current speed
-    if (speedNumber <= 30) {
+    if (speedNumber <= speedLimit) {
         _greenProgressBar.Progress = (float)speedNumber / 30.0f;
         _currentSpeedLabel.textColor = [UIColor greenColor];
     }
-    else if (speedNumber > 30 && speedNumber <= 36) {
+    else if (speedNumber > speedLimit && speedNumber <= (speedLimit + 15)) {
         _greenProgressBar.Progress = (float)100 / 10.0f;
-        _yellowProgressBar.Progress = (float)(speedNumber-30) / 10.0f;
+        _yellowProgressBar.Progress = (float)(speedNumber-speedLimit) / 10.0f;
         _currentSpeedLabel.textColor = [UIColor yellowColor];
     } else {
         _greenProgressBar.Progress = (float)100 / 10.0f;
         _yellowProgressBar.Progress = (float)100 / 10.0f;
-        _redProgressBar.Progress = (float)(speedNumber-40) / 20.0f;
+        _redProgressBar.Progress = (float)(speedNumber-(speedLimit+15)) / 20.0f;
         _currentSpeedLabel.textColor = [UIColor redColor];
     }
 }
@@ -146,7 +148,7 @@
         speedSystem = 3.6; //km system
     }
     else if (_kmmileSegControl.selectedSegmentIndex == 1) {
-        speedSystem = 2.24; //mile system
+        speedSystem = 2.23; //mile system
         speedLimitSystem = 0.62;
     }
 }
