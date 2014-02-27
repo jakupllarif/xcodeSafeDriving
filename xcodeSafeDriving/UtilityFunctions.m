@@ -14,13 +14,21 @@ static bool smsAlert = false;
 @implementation UtilityFunctions
 
 +(void)speedTrack:(double)currentSpeed :(double)speedLimit{
+    NSURL *songurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tap-2" ofType:@"aif"]];
+    AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:songurl error:nil];
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Overspeeding" message:@"Slow down for your safety." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     alert.tag = 101;
+    
     if (currentSpeed > speedLimit && speedAlert == false) {
         [alert show];
         speedAlert = true;
+        audio.volume = 0.9;
+        [audio play];
     } else if (currentSpeed <= speedLimit && speedAlert == true) {
         speedAlert = false;
+        [audio stop];
+        //[audio release];
     }
 }
 
