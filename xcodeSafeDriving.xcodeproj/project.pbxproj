@@ -43,7 +43,6 @@
 		E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB1B189985DC00C5483C /* Parse.framework */; };
 		E3F43ECE18BFDA35000B5898 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F43ECD18BFDA35000B5898 /* AVFoundation.framework */; };
 		E3F43ED218BFDEBD000B5898 /* tap-2.aif in Resources */ = {isa = PBXBuildFile; fileRef = E3F43ED118BFDEBD000B5898 /* tap-2.aif */; };
-		E3F43ED418BFE270000B5898 /* karadayi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3F43ED318BFE270000B5898 /* karadayi.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +104,6 @@
 		E3CC9519189F1C89001160CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E3F43ECD18BFDA35000B5898 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E3F43ED118BFDEBD000B5898 /* tap-2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = "tap-2.aif"; path = "../../../Downloads/tap-2.aif"; sourceTree = "<group>"; };
-		E3F43ED318BFE270000B5898 /* karadayi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = karadayi.mp3; path = ../../../Downloads/karadayi.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +147,6 @@
 		E3A1372818997CB600AFF302 = {
 			isa = PBXGroup;
 			children = (
-				E3F43ED318BFE270000B5898 /* karadayi.mp3 */,
 				E3F43ED118BFDEBD000B5898 /* tap-2.aif */,
 				E3A1373A18997CB600AFF302 /* xcodeSafeDriving */,
 				E3A1375918997CB600AFF302 /* xcodeSafeDrivingTests */,
@@ -330,7 +327,6 @@
 			files = (
 				E3A1374D18997CB600AFF302 /* Images.xcassets in Resources */,
 				E3A1373F18997CB600AFF302 /* InfoPlist.strings in Resources */,
-				E3F43ED418BFE270000B5898 /* karadayi.mp3 in Resources */,
 				E3F43ED218BFDEBD000B5898 /* tap-2.aif in Resources */,
 				E3A1374818997CB600AFF302 /* Main.storyboard in Resources */,
 			);
