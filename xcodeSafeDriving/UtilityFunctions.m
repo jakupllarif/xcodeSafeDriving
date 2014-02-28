@@ -7,6 +7,7 @@
 //
 
 #import "UtilityFunctions.h"
+#import <Parse/Parse.h>
 
 static bool speedAlert = false;
 static bool smsAlert = false;
@@ -30,13 +31,13 @@ static bool smsAlert = false;
     }
 }
 
-+(void)smsBlocking:(double)currengSpeed {
++(void)smsBlocking:(double)currentSpeed {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You cannot use the phone while driving!" message:@"Please stop the car to use your phone!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     alert.tag = 102;
-    if (currengSpeed > 0 && smsAlert == false) {
+    if (currentSpeed > 0 && smsAlert == false) {
         [alert show];
         smsAlert = true;
-    } else if (currengSpeed <= 0 && smsAlert == true) {
+    } else if (currentSpeed <= 0 && smsAlert == true) {
         smsAlert = false;
     }
 }
@@ -44,6 +45,10 @@ static bool smsAlert = false;
 +(void)drunkDriving {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Driving after drunk is dangerous!" message:@"Please don't drive after drunk!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+}
+
++(void)emergencyNotification{
+    
 }
 
 +(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
