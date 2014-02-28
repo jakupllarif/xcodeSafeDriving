@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface CurrentSpeedViewController : UIViewController <CLLocationManagerDelegate>
 
+@property (strong, nonatomic) AVAudioPlayer *audio;
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *speedLimitLabel;

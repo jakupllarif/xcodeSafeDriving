@@ -29,7 +29,7 @@
     int speedSystem;
     double speedLimitSystem;
 }
-
+@synthesize audio;
 -(void)viewDidLoad {
     
     [super viewDidLoad];
@@ -56,6 +56,9 @@
     if ([CLLocationManager locationServicesEnabled]) {
         [locationManager startUpdatingLocation];
     }
+    
+    NSURL *songurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tap-2" ofType:@"aif"]];
+    audio = [[AVAudioPlayer alloc]initWithContentsOfURL:songurl error:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -90,7 +93,7 @@
         if (smsBlock)
             [UtilityFunctions smsBlocking:speed];
         if (speedTrack)
-            [UtilityFunctions speedTrack:speed :speedLimit];
+            [UtilityFunctions speedTrack:speed :speedLimit :audio];
         
         //update the progress bar to change color depending on the speed
         [self updateProgressBar:speed limit:speedLimit];

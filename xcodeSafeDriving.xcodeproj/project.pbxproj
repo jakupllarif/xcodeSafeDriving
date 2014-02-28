@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120B494918C050DE00EAEE07 /* tap-2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 120B494818C050DE00EAEE07 /* tap-2.aif */; };
 		121A0F8718A32A7B000869C7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F8618A32A7B000869C7 /* SettingsViewController.m */; };
 		121A0F8A18A33491000869C7 /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F8918A33491000869C7 /* UtilityFunctions.m */; };
 		121A0F9118A429A9000869C7 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121A0F9018A429A9000869C7 /* ResetPasswordViewController.m */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120B494818C050DE00EAEE07 /* tap-2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tap-2.aif"; sourceTree = "<group>"; };
 		121A0F8518A32A7B000869C7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		121A0F8618A32A7B000869C7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		121A0F8818A33491000869C7 /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityFunctions.h; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		E3A1373A18997CB600AFF302 /* xcodeSafeDriving */ = {
 			isa = PBXGroup;
 			children = (
+				120B494818C050DE00EAEE07 /* tap-2.aif */,
 				E3A1374318997CB600AFF302 /* AppDelegate.h */,
 				E3A1374418997CB600AFF302 /* AppDelegate.m */,
 				E3A1374618997CB600AFF302 /* Main.storyboard */,
@@ -325,6 +328,7 @@
 				E3A1374D18997CB600AFF302 /* Images.xcassets in Resources */,
 				E3A1373F18997CB600AFF302 /* InfoPlist.strings in Resources */,
 				E3A1374818997CB600AFF302 /* Main.storyboard in Resources */,
+				120B494918C050DE00EAEE07 /* tap-2.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

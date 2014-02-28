@@ -11,7 +11,7 @@
 
 @interface UtilityFunctions : NSObject<UIAlertViewDelegate>
 
-+ (void)speedTrack:(double) currentSpeed :(double)speedLimit;
++ (void)speedTrack:(double) currentSpeed :(double)speedLimit :(AVAudioPlayer*)audio;
 + (void)smsBlocking:(double) currengSpeed;
 + (void)drunkDriving;
 @end
