@@ -25,6 +25,7 @@
 		122EBB311899A0EF00C5483C /* CurrentSpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB301899A0EF00C5483C /* CurrentSpeedViewController.m */; };
 		122EBB341899A79E00C5483C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EBB331899A79E00C5483C /* MapViewController.m */; };
 		128810AE18B926CC00FA164F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128810AD18B926CC00FA164F /* MapKit.framework */; };
+		12AC24C318C038D800845DEE /* tap-2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 12AC24C218C038D800845DEE /* tap-2.aif */; };
 		E3A1373518997CB600AFF302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373418997CB600AFF302 /* Foundation.framework */; };
 		E3A1373718997CB600AFF302 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373618997CB600AFF302 /* CoreGraphics.framework */; };
 		E3A1373918997CB600AFF302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A1373818997CB600AFF302 /* UIKit.framework */; };
@@ -42,7 +43,6 @@
 		E3CC951A189F1C89001160CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CC9519189F1C89001160CF /* RegisterViewController.m */; };
 		E3D734A1189AEEA400BF9F33 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122EBB1B189985DC00C5483C /* Parse.framework */; };
 		E3F43ECE18BFDA35000B5898 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F43ECD18BFDA35000B5898 /* AVFoundation.framework */; };
-		E3F43ED218BFDEBD000B5898 /* tap-2.aif in Resources */ = {isa = PBXBuildFile; fileRef = E3F43ED118BFDEBD000B5898 /* tap-2.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +81,7 @@
 		122EBB321899A79E00C5483C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		122EBB331899A79E00C5483C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		128810AD18B926CC00FA164F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		12AC24C218C038D800845DEE /* tap-2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tap-2.aif"; sourceTree = "<group>"; };
 		E3A1373118997CB600AFF302 /* xcodeSafeDriving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xcodeSafeDriving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A1373418997CB600AFF302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E3A1373618997CB600AFF302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,7 +104,6 @@
 		E3CC9518189F1C89001160CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E3CC9519189F1C89001160CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E3F43ECD18BFDA35000B5898 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E3F43ED118BFDEBD000B5898 /* tap-2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = "tap-2.aif"; path = "../../../Downloads/tap-2.aif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 		E3A1372818997CB600AFF302 = {
 			isa = PBXGroup;
 			children = (
-				E3F43ED118BFDEBD000B5898 /* tap-2.aif */,
+				12AC24C218C038D800845DEE /* tap-2.aif */,
 				E3A1373A18997CB600AFF302 /* xcodeSafeDriving */,
 				E3A1375918997CB600AFF302 /* xcodeSafeDrivingTests */,
 				E3A1373318997CB600AFF302 /* Frameworks */,
@@ -327,7 +327,7 @@
 			files = (
 				E3A1374D18997CB600AFF302 /* Images.xcassets in Resources */,
 				E3A1373F18997CB600AFF302 /* InfoPlist.strings in Resources */,
-				E3F43ED218BFDEBD000B5898 /* tap-2.aif in Resources */,
+				12AC24C318C038D800845DEE /* tap-2.aif in Resources */,
 				E3A1374818997CB600AFF302 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
