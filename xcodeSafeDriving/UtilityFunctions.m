@@ -47,42 +47,24 @@ static bool smsAlert = false;
 }
 
 +(void)emergencyNotification: (NSString *)currentLocation {
-    /*[PFCloud callFunctionInBackground:@"emergencyEmail"
-                       withParameters:@{@"Location": currentLocation}//so far I know location is one of the parameters, later on I will add all necessary parameters
-                                block:^(id object, NSError *error) {
+    [PFCloud callFunctionInBackground:@"emergencyEmail"
+                       withParameters:@{@"Location": currentLocation}                                
+                            block:^(NSString *result, NSError *error) {
                                     if (!error) {
-                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Successed!" message:@"Emergency Email has been sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success!" message:@"Emergency Email has been sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                         [alert show];
                                     }
                                     else {
-                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Emergency Email cannot be sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Upssss" message:@"Emergency Email was not sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                         [alert show];
                                     }
-                                }];*/
+                                }];
     
     [PFCloud callFunctionInBackground:@"hello"
                        withParameters:@{}
                                 block:^(NSString *result, NSError *error) {
                                     if (!error) {
                                         // result is @"Hello world!"
-                                    }
-                                }];
-    
-    
-    [PFCloud callFunctionInBackground:@"sendMail"
-                       withParameters:@{
-                                        @"toEmail":@"liuz@mail.sacredheart.edu",
-                                        @"toName":@"Zhenxing Liu",
-                                        @"fromEmail":@"jakupllarif@mail.sacredheart.com",
-                                        @"fromName":@"Flodjana Jakupllari",
-                                        @"text":@"Emergency situation on location:.... Airbag has exploded!",
-                                        @"subject":@"Emergency Notification"
-                                        }
-                                block:^(NSString *result, NSError *error) {
-                                    if (!error) {
-                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset Passoword" message:@"Email Sent :-)"
-                                            delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                                        [alert show];
                                     }
                                 }];
 }
