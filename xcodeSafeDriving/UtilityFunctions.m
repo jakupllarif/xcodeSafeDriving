@@ -47,7 +47,7 @@ static bool smsAlert = false;
 }
 
 +(void)emergencyNotification: (NSString *)currentLocation {
-    [PFCloud callFunctionInBackground:@"emergencyEmail"
+    /*[PFCloud callFunctionInBackground:@"emergencyEmail"
                        withParameters:@{@"Location": currentLocation}//so far I know location is one of the parameters, later on I will add all necessary parameters
                                 block:^(id object, NSError *error) {
                                     if (!error) {
@@ -57,6 +57,14 @@ static bool smsAlert = false;
                                     else {
                                         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Emergency Email cannot be sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                         [alert show];
+                                    }
+                                }];*/
+    
+    [PFCloud callFunctionInBackground:@"hello"
+                       withParameters:@{}
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error) {
+                                        // result is @"Hello world!"
                                     }
                                 }];
 }
