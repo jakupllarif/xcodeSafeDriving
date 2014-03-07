@@ -46,9 +46,6 @@
     if (drinkDriveAlert) {
         [UtilityFunctions drunkDriving];
     }
-    if (emergencyNotification){
-        [UtilityFunctions emergencyNotification];
-    }
     if (currentuser) {
         _welcomeMessage.text = [NSString stringWithFormat:@"Welcome %@ %@", [currentuser objectForKey:@"firstName"], [currentuser objectForKey:@"lastName"]];
         

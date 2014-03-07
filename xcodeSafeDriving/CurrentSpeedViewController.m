@@ -26,6 +26,7 @@
     CLPlacemark *placemark;
     BOOL smsBlock;
     BOOL speedTrack;
+    BOOL emergencyNotification;
     int speedSystem;
     double speedLimitSystem;
 }
@@ -66,6 +67,7 @@
     if (currentuser) {
         smsBlock = [currentuser[@"smsBlock"] boolValue];
         speedTrack = [currentuser[@"speedTrack"] boolValue];
+        emergencyNotification = [currentuser [@"emergencyNotification"] boolValue];
     }
     [locationManager startUpdatingLocation];
 }
@@ -94,7 +96,7 @@
             [UtilityFunctions smsBlocking:speed];
         if (speedTrack)
             [UtilityFunctions speedTrack:speed :speedLimit :audio];
-        
+
         //update the progress bar to change color depending on the speed
         [self updateProgressBar:speed limit:speedLimit];
         
@@ -113,6 +115,10 @@
             NSLog(@"%@", error.debugDescription);
         }
     } ];
+    NSString *emergencyLocation = [NSString stringWithFormat:@"%@ %@, %@ %@, %@, %@", placemark.subThoroughfare == nil ? @"" : placemark.subThoroughfare, placemark.thoroughfare, placemark.postalCode, placemark.locality, placemark.administrativeArea, placemark.country];
+    if (emergencyNotification){
+        [UtilityFunctions emergencyNotification: emergencyLocation];
+    }
 }
 
 

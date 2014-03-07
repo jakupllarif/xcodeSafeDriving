@@ -7,7 +7,6 @@
 //
 
 #import "UtilityFunctions.h"
-#import <Parse/Parse.h>
 
 static bool speedAlert = false;
 static bool smsAlert = false;
@@ -47,8 +46,19 @@ static bool smsAlert = false;
     [alert show];
 }
 
-+(void)emergencyNotification{
-    
++(void)emergencyNotification: (NSString *)currentLocation {
+    [PFCloud callFunctionInBackground:@"emergencyEmail"
+                       withParameters:@{@"Location": currentLocation}//so far I know location is one of the parameters, later on I will add all necessary parameters
+                                block:^(id object, NSError *error) {
+                                    if (!error) {
+                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Successed!" message:@"Emergency Email has been sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                        [alert show];
+                                    }
+                                    else {
+                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Emergency Email cannot be sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                        [alert show];
+                                    }
+                                }];
 }
 
 +(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
