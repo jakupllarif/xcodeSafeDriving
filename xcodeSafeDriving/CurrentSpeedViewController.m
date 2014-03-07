@@ -29,6 +29,7 @@
     BOOL emergencyNotification;
     int speedSystem;
     double speedLimitSystem;
+    BOOL emaiSend;
 }
 @synthesize audio;
 -(void)viewDidLoad {
@@ -60,6 +61,7 @@
     
     NSURL *songurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tap-2" ofType:@"aif"]];
     audio = [[AVAudioPlayer alloc]initWithContentsOfURL:songurl error:nil];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -69,6 +71,7 @@
         speedTrack = [currentuser[@"speedTrack"] boolValue];
         emergencyNotification = [currentuser [@"emergencyNotification"] boolValue];
     }
+    emaiSend = TRUE;
     [locationManager startUpdatingLocation];
 }
 
@@ -116,8 +119,9 @@
         }
     } ];
     NSString *emergencyLocation = [NSString stringWithFormat:@"%@ %@, %@ %@, %@, %@", placemark.subThoroughfare == nil ? @"" : placemark.subThoroughfare, placemark.thoroughfare, placemark.postalCode, placemark.locality, placemark.administrativeArea, placemark.country];
-    if (emergencyNotification){
+    if (emergencyNotification && emaiSend){
         [UtilityFunctions emergencyNotification: emergencyLocation];
+        emaiSend = FALSE;
     }
 }
 
