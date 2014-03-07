@@ -67,6 +67,24 @@ static bool smsAlert = false;
                                         // result is @"Hello world!"
                                     }
                                 }];
+    
+    
+    [PFCloud callFunctionInBackground:@"sendMail"
+                       withParameters:@{
+                                        @"toEmail":@"liuz@mail.sacredheart.edu",
+                                        @"toName":@"Zhenxing Liu",
+                                        @"fromEmail":@"jakupllarif@mail.sacredheart.com",
+                                        @"fromName":@"Flodjana Jakupllari",
+                                        @"text":@"Emergency situation on location:.... Airbag has exploded!",
+                                        @"subject":@"Emergency Notification"
+                                        }
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error) {
+                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset Passoword" message:@"Email Sent :-)"
+                                            delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                        [alert show];
+                                    }
+                                }];
 }
 
 +(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
