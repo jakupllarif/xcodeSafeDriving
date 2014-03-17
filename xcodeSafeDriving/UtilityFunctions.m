@@ -59,6 +59,14 @@ static bool smsAlert = false;
                                         [alert show];
                                     }
                                 }];
+    
+    [PFCloud callFunctionInBackground:@"hello"
+                       withParameters:@{}
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error) {
+                                        // result is @"Hello world!"
+                                    }
+                                }];
 }
 
 +(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
