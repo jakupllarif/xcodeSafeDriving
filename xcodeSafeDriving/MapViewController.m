@@ -9,51 +9,54 @@
 #import "MapViewController.h"
 
 @implementation MapViewController
-@synthesize map = _map;
 
-double const METERS_PER_MILE = 1609.344;
-
--(void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    [self.map.delegate self];
-    [self.map setShowsUserLocation: YES];
-
+    self.mapView.delegate = self;
+    self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
 }
 
-- (void)mapView:(MKMapView *)map didUpdateUserLocation:(MKUserLocation *)userLocation{
-    CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
-    [self.map setRegion:region animated:YES];
-    //_map.centerCoordinate = userLocation.location.coordinate;
-}
-
--(void) viewDidUnload{
-    [self setMap:nil];
-    [super viewDidUnload];
-}
-
-/*-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    MKCoordinateRegion mapRegion;
-    mapRegion.center = _map.userLocation.coordinate;
-    mapRegion.span.latitudeDelta = 0.1;
-    mapRegion.span.longitudeDelta = 0.1;
-    
-    [_map setRegion:mapRegion animated: YES];
-}*/
-
-- (IBAction)mapSegmentedControl:(id)sender {
-    switch (_segmentedControl.selectedSegmentIndex) {
+- (IBAction)mapSegmentedControl:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
         case 0:
-            _map.mapType = MKMapTypeStandard;
+            self.mapView.mapType = MKMapTypeStandard;
             break;
         case 1:
-            _map.mapType = MKMapTypeSatellite;
+            self.mapView.mapType = MKMapTypeSatellite;
             break;
         case 2:
-            _map.mapType = MKMapTypeHybrid;
+            self.mapView.mapType = MKMapTypeHybrid;
             break;
         default:
             break;
     }
 }
+
+- (IBAction)zoomToCurrentLocation:(UIBarButtonItem *)sender {
+    float spanX = 0.00725;
+    float spanY = 0.00725;
+    MKCoordinateRegion region;
+    region.center.latitude = self.mapView.userLocation.coordinate.latitude;
+    region.center.longitude = self.mapView.userLocation.coordinate.longitude;
+    region.span.latitudeDelta = spanX;
+    region.span.longitudeDelta = spanY;
+    [self.mapView setRegion:region animated:YES];
+}
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+   
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 @end

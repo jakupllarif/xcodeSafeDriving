@@ -29,7 +29,7 @@
     BOOL emergencyNotification;
     double speedSystem;
     double speedLimitSystem;
-    BOOL emaiSend;
+    BOOL emailSend;
 }
 @synthesize audio;
 -(void)viewDidLoad {
@@ -71,7 +71,7 @@
         speedTrack = [currentuser[@"speedTrack"] boolValue];
         emergencyNotification = [currentuser [@"emergencyNotification"] boolValue];
     }
-    emaiSend = TRUE;
+    emailSend = TRUE;
     [locationManager startUpdatingLocation];
 }
 
@@ -119,9 +119,9 @@
         }
     } ];
     NSString *emergencyLocation = [NSString stringWithFormat:@"%@ %@, %@ %@, %@, %@", placemark.subThoroughfare == nil ? @"" : placemark.subThoroughfare, placemark.thoroughfare, placemark.postalCode, placemark.locality, placemark.administrativeArea, placemark.country];
-    if (emergencyNotification && emaiSend){
+    if (emergencyNotification && emailSend){
         [UtilityFunctions emergencyNotification: emergencyLocation];
-        emaiSend = FALSE;
+        emailSend = FALSE;
     }
 }
 

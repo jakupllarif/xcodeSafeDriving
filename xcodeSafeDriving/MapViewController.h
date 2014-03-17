@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController<MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView *map;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)mapSegmentedControl:(id)sender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)zoomToCurrentLocation:(id)sender;
 
 @end
