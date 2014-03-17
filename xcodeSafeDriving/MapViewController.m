@@ -16,6 +16,14 @@
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
+    float spanX = 0.00725;
+    float spanY = 0.00725;
+    MKCoordinateRegion region;
+    region.center.latitude = self.mapView.userLocation.coordinate.latitude;
+    region.center.longitude = self.mapView.userLocation.coordinate.longitude;
+    region.span.latitudeDelta = spanX;
+    region.span.longitudeDelta = spanY;
+    [self.mapView setRegion:region animated:YES];
 }
 
 - (IBAction)mapSegmentedControl:(UISegmentedControl *)sender {
@@ -35,14 +43,14 @@
 }
 
 - (IBAction)zoomToCurrentLocation:(UIBarButtonItem *)sender {
-    float spanX = 0.00725;
-    float spanY = 0.00725;
-    MKCoordinateRegion region;
-    region.center.latitude = self.mapView.userLocation.coordinate.latitude;
-    region.center.longitude = self.mapView.userLocation.coordinate.longitude;
-    region.span.latitudeDelta = spanX;
-    region.span.longitudeDelta = spanY;
-    [self.mapView setRegion:region animated:YES];
+//    float spanX = 0.00725;
+//    float spanY = 0.00725;
+//    MKCoordinateRegion region;
+//    region.center.latitude = self.mapView.userLocation.coordinate.latitude;
+//    region.center.longitude = self.mapView.userLocation.coordinate.longitude;
+//    region.span.latitudeDelta = spanX;
+//    region.span.longitudeDelta = spanY;
+//    [self.mapView setRegion:region animated:YES];
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
