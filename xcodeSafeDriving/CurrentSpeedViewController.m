@@ -27,7 +27,7 @@
     BOOL smsBlock;
     BOOL speedTrack;
     BOOL emergencyNotification;
-    int speedSystem;
+    double speedSystem;
     double speedLimitSystem;
     BOOL emaiSend;
 }
@@ -93,7 +93,7 @@
     _speedLimitLabel.text = [NSString stringWithFormat:@"%.2f", round(speedLimit)];
     
     if (currentLocation != nil) {
-        double speed = currentLocation.speed <= 0.00 ? 0 : currentLocation.speed * speedSystem;
+        double speed = currentLocation.speed <= 0.00 ? 0 : (currentLocation.speed * speedSystem);
         //calling Utility functions
         if (smsBlock)
             [UtilityFunctions smsBlocking:speed];
@@ -135,17 +135,17 @@
     
     //update progress bars according to the current speed
     if (speedNumber <= speedLimit) {
-        _greenProgressBar.Progress = (float)speedNumber / 30.0f;
+        _greenProgressBar.Progress = (float)speedNumber / (speedLimit * 1.0f);
         _currentSpeedLabel.textColor = [UIColor greenColor];
     }
-    else if (speedNumber > speedLimit && speedNumber <= (speedLimit + 15)) {
+    else if (speedNumber > speedLimit && speedNumber <= (speedLimit + speedLimit/5)) {
         _greenProgressBar.Progress = (float)100 / 10.0f;
-        _yellowProgressBar.Progress = (float)(speedNumber-speedLimit) / 10.0f;
+        _yellowProgressBar.Progress = (float)(speedNumber-speedLimit) / (speedLimit/5 * 1.0f);
         _currentSpeedLabel.textColor = [UIColor yellowColor];
     } else {
         _greenProgressBar.Progress = (float)100 / 10.0f;
         _yellowProgressBar.Progress = (float)100 / 10.0f;
-        _redProgressBar.Progress = (float)(speedNumber-(speedLimit+15)) / 20.0f;
+        _redProgressBar.Progress = (float)(speedNumber-(speedLimit + speedLimit/5)) / 20.0f;
         _currentSpeedLabel.textColor = [UIColor redColor];
     }
 }
@@ -158,7 +158,7 @@
 - (IBAction)kmmileSegmentedControl:(id)sender {
     if(_kmmileSegControl.selectedSegmentIndex == 0) {
         speedLimitSystem = 1;
-        speedSystem = 3.6; //km system
+        speedSystem = 3.60; //km system
     }
     else if (_kmmileSegControl.selectedSegmentIndex == 1) {
         speedSystem = 2.23; //mile system
