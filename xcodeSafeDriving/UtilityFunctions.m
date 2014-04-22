@@ -18,11 +18,13 @@ static bool smsAlert = false;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Overspeeding" message:@"Slow down for your safety." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     alert.tag = 101;
     
-    if (currentSpeed > 0 && speedAlert == false) {
-        [alert show];
-        speedAlert = true;
-        audio.volume = 0.9;
+    if (currentSpeed > speedLimit){
         [audio play];
+        audio.volume = 0.9;
+        if (speedAlert == false) {
+            [alert show];
+            speedAlert = true;
+        }
     } else if (currentSpeed <= speedLimit && speedAlert == true) {
         speedAlert = false;
         [audio stop];

@@ -78,6 +78,14 @@
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Ooops!" message:@"We couldn't get your location!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //reset speed labels
+    _currentSpeedLabel.text = 0;
+    _speedLimitLabel.text = 0;
+    //reset progress bar
+    _greenProgressBar.progress = 0;
+    _yellowProgressBar.progress = 0;
+    _redProgressBar.progress = 0;
+    
     [errorAlert show];
 }
 
