@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -180,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="-2760" y="-1661"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main View Controller - Main-->
         <scene sceneID="UbC-gW-oDy">
             <objects>
                 <viewController id="7dK-x8-dgH" customClass="MainViewController" sceneMemberID="viewController">
@@ -245,7 +245,7 @@
                         <color key="backgroundColor" red="0.10435647839999999" green="0.4312313337" blue="0.85192123720000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="HNL-7t-zeo"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="info.png" id="HNL-7t-zeo"/>
                     <connections>
                         <outlet property="functionalitiesTableView" destination="xtR-nz-UiJ" id="3D3-oF-Vzi"/>
                         <outlet property="welcomeMessage" destination="wbW-e8-kas" id="4Fs-dG-N9O"/>
@@ -335,14 +335,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR1-cz-dn4">
-                                <rect key="frame" x="123" y="320" width="74" height="21"/>
+                                <rect key="frame" x="123" y="286" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="WRu-7w-dCF">
-                                <rect key="frame" x="20" y="349" width="280" height="118"/>
+                                <rect key="frame" x="20" y="316" width="280" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -597,7 +597,7 @@
         <scene sceneID="Js1-ig-RsA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PUr-9g-bD7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Speed" id="eVs-fl-eW7"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Speed" image="cctv.png" id="eVs-fl-eW7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HRL-Kx-7bv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -976,7 +976,7 @@
         <scene sceneID="7V2-X8-cUU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fH0-Lq-A54" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="Rkj-sR-bbl"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear.png" id="Rkj-sR-bbl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLb-VR-EBJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1020,6 +1020,11 @@
             <point key="canvasLocation" x="-3330" y="-1661"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cctv.png" width="30" height="30"/>
+        <image name="gear.png" width="30" height="30"/>
+        <image name="info.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
