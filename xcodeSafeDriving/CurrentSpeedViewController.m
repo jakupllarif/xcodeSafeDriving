@@ -82,9 +82,9 @@
     _currentSpeedLabel.text = 0;
     _speedLimitLabel.text = 0;
     //reset progress bar
-    _greenProgressBar.progress = 0;
-    _yellowProgressBar.progress = 0;
-    _redProgressBar.progress = 0;
+    _greenProgressBar.progress = 0.0;
+    _yellowProgressBar.progress = 0.0;
+    _redProgressBar.progress = 0.0;
     
     [errorAlert show];
 }
