@@ -103,10 +103,12 @@
     if (currentLocation != nil) {
         double speed = currentLocation.speed <= 0.00 ? 0 : (currentLocation.speed * speedSystem);
         //calling Utility functions
-        if (smsBlock)
-            [UtilityFunctions smsBlocking:speed];
-        if (speedTrack)
-            [UtilityFunctions speedTrack:speed :speedLimit :audio];
+        if (speedLimit > 0){
+            if (smsBlock)
+                [UtilityFunctions smsBlocking:speed];
+            if (speedTrack)
+                [UtilityFunctions speedTrack:speed :speedLimit :audio];
+        }
 
         //update the progress bar to change color depending on the speed
         [self updateProgressBar:speed limit:speedLimit];
@@ -142,19 +144,21 @@
     _redProgressBar.Progress = 0.0f;
     
     //update progress bars according to the current speed
-    if (speedNumber <= speedLimit) {
-        _greenProgressBar.Progress = (float)speedNumber / (speedLimit * 1.0f);
-        _currentSpeedLabel.textColor = [UIColor greenColor];
-    }
-    else if (speedNumber > speedLimit && speedNumber <= (speedLimit + speedLimit/5)) {
-        _greenProgressBar.Progress = (float)100 / 10.0f;
-        _yellowProgressBar.Progress = (float)(speedNumber-speedLimit) / (speedLimit/5 * 1.0f);
-        _currentSpeedLabel.textColor = [UIColor yellowColor];
-    } else {
-        _greenProgressBar.Progress = (float)100 / 10.0f;
-        _yellowProgressBar.Progress = (float)100 / 10.0f;
-        _redProgressBar.Progress = (float)(speedNumber-(speedLimit + speedLimit/5)) / 20.0f;
-        _currentSpeedLabel.textColor = [UIColor redColor];
+    if(speedLimit > 0){
+        if (speedNumber <= speedLimit) {
+            _greenProgressBar.Progress = (float)speedNumber / (speedLimit * 1.0f);
+            _currentSpeedLabel.textColor = [UIColor greenColor];
+        }
+        else if (speedNumber > speedLimit && speedNumber <= (speedLimit + speedLimit/5)) {
+            _greenProgressBar.Progress = (float)100 / 10.0f;
+            _yellowProgressBar.Progress = (float)(speedNumber-speedLimit) / (speedLimit/5 * 1.0f);
+            _currentSpeedLabel.textColor = [UIColor yellowColor];
+        } else {
+            _greenProgressBar.Progress = (float)100 / 10.0f;
+            _yellowProgressBar.Progress = (float)100 / 10.0f;
+            _redProgressBar.Progress = (float)(speedNumber-(speedLimit + speedLimit/5)) / 20.0f;
+            _currentSpeedLabel.textColor = [UIColor redColor];
+        }
     }
 }
 
