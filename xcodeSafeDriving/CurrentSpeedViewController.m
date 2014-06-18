@@ -104,11 +104,13 @@
         double speed = currentLocation.speed <= 0.00 ? 0 : (currentLocation.speed * speedSystem);
         //calling Utility functions
         if (speedLimit > 0){
-            if (smsBlock)
-                [UtilityFunctions smsBlocking:speed];
+            //if (smsBlock)
+                //[UtilityFunctions smsBlocking:speed];
             if (speedTrack)
                 [UtilityFunctions speedTrack:speed :speedLimit :audio];
         }
+        if (smsBlock)
+            [UtilityFunctions smsBlocking:speed];
 
         //update the progress bar to change color depending on the speed
         [self updateProgressBar:speed limit:speedLimit];
